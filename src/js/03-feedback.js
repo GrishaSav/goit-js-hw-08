@@ -18,6 +18,10 @@ function onFormInput(evt) {
 
 function onFormSubmit(evt) {
   evt.preventDefault();
+  if (!evt.target.email.value || !evt.target.message.value) {
+    alert('Please, enter all data!');
+    return;
+  }
   evt.target.reset();
   localStorage.removeItem(STORAGE_KEY);
   console.log(formValue);
